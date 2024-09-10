@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta neame="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/Style.css" />
+    <title>PlaceHolder</title>
+</head>
+
+<body id="body">
+    <nav>
+        <p><a href="Index" id="logo">B2-25</a></p>
+        <ul id="navElements">
+            <li><a href="Index">Home</a></li>
+            <li><a href="#">Albums</a>
+                <ul id="dropdown"></ul>
+            </li>
+            <li><a href="/Editserver">Edit</a></li>
+        </ul>
+    </nav>
+
+    <h1 id="welcome">PlaceHolder</h1>
+
+
+    <div id="albumImages"></div>
+
+    <div id="flexPopup" class="modalFlex" style="display: none">
+        <span class="closeModalX" onclick="closeModal()">&times;</span>
+        <div id="popUpcontent" class="flexPopup-content">
+        </div>
+        <a class="prev" onclick="nextSlides(-1)">&#10094;</a>
+        <a class="next" onclick="nextSlides(1)">&#10095;</a>
+
+    </div>
+
+    <!-- Loading the js scripts -->
+    <script src="/javascripts/ImageLoad.js "></script>
+    <script src="/javascripts/NavbarUpdate.js"></script>
+    <script src="/javascripts/Imageupload64.js"></script>
+    <script src="/javascripts/piexif.js"></script>
+    <script src="/javascripts/pathfile.js"></script>
+
+    <!-- Album SetUp -->
+    <script type="text/javascript" id="DropdownSetUp">
+        let albums = ["testAlbum"];
+        updateDropdown(albums);
+        addAnchor(albums);
+    </script>
+
+
+    <!-- Create and add images to albums -->
+    <script type="text/javascript" id="AlbumName">
+        // This variable needs to change based on album
+        setUpAlbum(albums[0]);
+        getApiTable("testAlbum", "album");
+    </script>
+
+</body>
